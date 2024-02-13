@@ -55,9 +55,6 @@ export async function createStreamChatCompletion(
           console.error(error);
         },
       },
-    },
-    {
-      responseType: 'stream'
     }
   );
 }
