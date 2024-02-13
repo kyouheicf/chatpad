@@ -38,9 +38,6 @@ export async function createStreamChatCompletion(
       max_tokens: 256,
     },
     {
-      responseType: "stream",
-    },
-    {
       apiKey: apiKey,
       chatCompletionsUrl: chatCompletionsUrl,
       handler: {
