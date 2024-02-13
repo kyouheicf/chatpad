@@ -42,16 +42,22 @@ export async function createStreamChatCompletion(
       chatCompletionsUrl: chatCompletionsUrl,
       handler: {
         onContent(content, isFinal, stream) {
+          console.log(content, "isFinal?", isFinal);
           setStreamContent(messageId, content, isFinal);
           if (isFinal) {
             setTotalTokens(chatId, content);
           }
         },
-        onDone(stream) {},
+        onDone(stream) {
+          console.log('Done!');
+        },
         onError(error, stream) {
           console.error(error);
         },
       },
+    },
+    {
+      responseType: 'stream'
     }
   );
 }
