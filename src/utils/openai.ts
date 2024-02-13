@@ -35,7 +35,7 @@ export async function createStreamChatCompletion(
     {
       model,
       messages,
-      max_tokens: 100,
+      max_tokens: 256,
     },
     {
       apiKey: apiKey,
@@ -91,8 +91,11 @@ export async function createChatCompletion(
   return client.createChatCompletion(
     {
       model,
-      //stream: false,
+      stream: true, //stream: false,
       messages,
+    },
+    {
+      responseType: "stream",
     },
     {
       headers: {
