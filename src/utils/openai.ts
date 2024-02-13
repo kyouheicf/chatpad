@@ -10,13 +10,14 @@ function getClient(
   apiAuth: string,
   basePath: string
 ) {
-  const configuration = new Configuration({
+  let configuration = new Configuration({
     ...((apiType === "openai" ||
       (apiType === "custom" && apiAuth === "bearer-token")) && {
       apiKey: apiKey,
     }),
     ...(apiType === "custom" && { basePath: basePath }),
   });
+  delete configuration.baseOptions.headers['User-Agent'];
   return new OpenAIApi(configuration);
 }
 
