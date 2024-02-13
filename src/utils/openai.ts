@@ -51,8 +51,8 @@ export async function createStreamChatCompletion(
         onDone(stream) {
           console.log('Done!');
         },
-        onError(error, stream) {
-          console.error(error);
+        onError(error, status, stream) {
+          console.error(error, status);
         },
       },
     }
