@@ -52,7 +52,7 @@ export async function createStreamChatCompletion(
           console.log('Done!');
         },
         onError(error, status, stream) {
-          console.error(error, status);
+          //console.error(error, status);
         },
       },
     }
