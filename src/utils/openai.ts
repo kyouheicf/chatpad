@@ -34,6 +34,7 @@ export async function createStreamChatCompletion(
     {
       model,
       messages,
+      max_tokens: 100,
     },
     {
       apiKey: apiKey,
