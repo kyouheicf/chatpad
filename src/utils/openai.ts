@@ -89,7 +89,7 @@ export async function createChatCompletion(
   return client.createChatCompletion(
     {
       model,
-      stream: false,
+      //stream: false,
       messages,
     },
     {
